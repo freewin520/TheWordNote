@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>分组管理</title>
+  <!-- <link rel="stylesheet" href="./css/word.css"> -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="list-group" style="float: left;height: 100%;width: 20%;text-align: center;">
+      <a href="#" class="list-group-item" style="background-color: #f8f9fb;height: 20%;">
+        <img src="../static/images/单词管理/u354.png" width="80px;">
+      </a>
+      <a href="#" class="list-group-item " style="height: 10%;" onclick="location.href='/words_manage'">
+            单词管理
+      </a>
+      <a href="#" class="list-group-item active" style="height: 10%;">分组管理</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/user_center'">个人中心</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/feed_back'">反馈中心</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/user_about'">关于我们</a>
+      <ul style="height:0;background-color: #f8f9fb;list-style: none;height: 25%;">
+        <li></li>
+      </ul>
+    </div>
+    <div style="float: right;height: 8%;width: 80%;">
+      <div class="dropdown" style="float: right;margin-right:30px;margin-top: 15px;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: none;">
+          <img src="../static/images/单词管理/u348.png" width="20px">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">个人信息</a></li>
+          <li><a href="#">用户反馈</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height: 8%;width: 79%;float: left;margin-left: 1%;">
+    
+
+    <button type="button" class="btn btn-primary" style="float: left;margin-top: 10px;margin-left: 15px;" data-toggle="modal" data-target=".group_increase">编辑/添加分组</button>
+  </div>
+  <div style="border:1px solid #CCC;float: left;width: 80%;margin-top: 2%;"></div>
+  <div style="float: left;width: 79%;margin-left: 1%;margin-top: 1%;">
+  <table class="table table-hover">
+    <tr>
+      <td style="width: 10%;">序号</td>
+      <td>分组名称</td>
+      <td>单词总数</td>
+      <td>添加时间</td>
+      <td>操作</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>第一组</td>
+      <td>200</td>
+      <td>2019/9/17</td>
+      <td>
+        <!-- Large modal -->
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" style=" border: none;border-radius: 50%; background: url(./images/单词管理/u418.png);"></button> -->
+        <img src="../static/images/单词管理/u362.png" width="15px" alt="..." data-toggle="modal" data-target=".group_increase">
+        <img src="../static/images/单词管理/u365.png" width="15px;" alt="..." data-toggle="modal" data-target=".group_delete">
+        <img src="../static/images/单词管理/timg.jpg" width="15px;" alt="..." data-toggle="modal" data-target=".group_view">
+      </td>
+    </tr>
+    <!-- 点击弹出事件 -->
+    <!-- <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                ...
+              </div>
+            </div>
+          </div> -->
+  </table>
+  </div>
+</div>
+</div>
+
+
+
+          <!-- 编辑或添加分组 -->
+          <div class="modal fade group_increase" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">编辑/添加分组</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">请输入分组内容</label>
+                <input type="title" class="form-control" id="exampleInputEmail1">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">确定</button>
+          </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 删除分组 -->
+          <div class="modal fade group_delete" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">
+                    </label>
+                    <div class="col-sm-10">
+                      <img src="../static/images/单词管理/gantanhao.jpg" width="20px;">
+                      此操作将永久删除该分组，是否继续？
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        <!-- 查看分组详情 -->
+          <div class="modal fade group_view" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">查看分组详情</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                      分组名称&emsp;&emsp;
+                      形容词
+                    </div>
+                    </div>
+                    <form class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-10">
+                        单词总数&emsp;&emsp;
+                         200
+                      </div>
+                    </div>
+                    <form class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-sm-10">
+                          添加时间&emsp;&emsp;
+                          2019-9-18
+                        </div>
+                      </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                
+              </div>
+              </div>
+            </div>
+          </div>
+</body>
+
+  <script type="text/javascript">
+    function open(html){
+    window.open(html,'_self')
+    }
+  </script>
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

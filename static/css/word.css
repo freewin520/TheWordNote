@@ -1,0 +1,35 @@
+/*.table_l{
+	height: 100%;
+	width: 20%;
+	background-color:#f8f9fb;
+}*/
+.about{
+	font-size: 10px;
+	font-weight: bold;
+}
+.body{
+	font-size: 10px;
+	color: #b0b0b0;
+}
+.button_table{
+	background: white;
+	border-width: 1px;
+	border-radius:15%;
+	border-color:  #e9ebef;
+}
+.user_new_bt{
+	width: 20%;
+	float: left;
+	border: 1px solid #e4e4e4;
+	border-radius: 5%;
+	font-size: 10px;
+	height: 25px;
+	margin-left: 5px;
+}
+.user_new_font{
+	float: left;
+	font-weight: normal;
+	font-size: 10px;
+	margin:5px;
+
+}

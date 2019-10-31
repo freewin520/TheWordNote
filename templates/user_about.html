@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>反馈中心</title>
+  <!-- <link rel="stylesheet" href="./css/word.css"> -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/word.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="list-group" style="float: left;height: 100%;width: 20%;text-align: center;">
+      <a href="#" class="list-group-item" style="background-color: #f8f9fb;height: 20%;">
+        <img src="../static/images/单词管理/u354.png" width="80px;">
+      </a>
+      <a href="#" class="list-group-item " style="height: 10%;" onclick="location.href='/words_manage'">
+            单词管理
+      </a>
+      <a href="#" class="list-group-item " style="height: 10%;" onclick="location.href='/groups_manage'">分组管理</a>
+      <a href="#" class="list-group-item  " style="height: 10%;" onclick="location.href='/user_center'">个人中心</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/feed_back'">反馈中心</a>
+      <a href="#" class="list-group-item active" style="height: 10%;">关于我们</a>
+      <ul style="height:0;background-color: #f8f9fb;list-style: none;height: 25%;">
+        <li></li>
+      </ul>
+    </div>
+    <div style="float: right;height: 8%;width: 80%;">
+      <div class="dropdown" style="float: right;margin-right:30px;margin-top: 15px;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: none;">
+          <img src="../static/images/单词管理/u348.png" width="20px">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">个人信息</a></li>
+          <li><a href="#">用户反馈</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height: 8%;width: 79%;float: left;margin-left: 1%;">
+  </div>
+  <div style="border:1px solid #CCC;float: left;width: 80%;margin-top: 2%;"></div>
+  <div style="float: left;width: 77%;margin-left: 3%;margin-top: 4%;">
+  <img src="../static/images/关于页面/u749.svg" width="40px" style="float: left;">
+  <div style="margin-left: 10px;float: left;">
+    <font class="about">
+    myword<br>
+    </font>
+    <font class="body">
+    记单词小工具<br><br>
+    </font>    
+    <font class="about">
+    当前版本：<br>
+    </font>
+    <font class="body">
+    myword1.0<br><br>
+    </font>
+    <font class="about">
+      更新：<br>
+    </font>
+    <font class="body">
+    - 添加用户XXX功能<br>
+    - 添加XXXX功能<br>
+    - 添加XXXX功能<br><br>
+    </font>
+
+    <font class="about">制作:&emsp;&emsp;&nbsp;&nbsp;</font>
+    <font class="body">张三<br></font>
+
+    <font class="about">问题联系：</font>
+    <font class="body">lili.qu@alipay.com</font>
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</body>
+
+  <script type="text/javascript">
+    function open(html){
+    window.open(html,'_self')
+    }
+  </script>
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

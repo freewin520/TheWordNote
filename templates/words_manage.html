@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单词管理</title>
+  <!-- <link rel="stylesheet" href="./css/word.css"> -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="list-group" style="float: left;height: 100%;width: 20%;text-align: center;background-color: #f8f9fb;">
+      <a href="#" class="list-group-item" style="background-color: #f8f9fb;height: 20%;">
+        <img src="../static/images/单词管理/u354.png" width="80px;">
+      </a>
+      <a href="#" class="list-group-item active" style="height: 10%;">
+            单词管理
+      </a>
+      <a href="#" class="list-group-item " style="height: 10%;" onclick="location.href='/groups_manage'">分组管理</a>
+      <a href="#" class="list-group-item " style="height: 10%;" onclick="location.href='/user_center'">个人中心</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/feed_back'">反馈中心</a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/user_about'">关于我们</a>
+    </div>
+    <div style="float: right;height: 8%;width: 80%;">
+      <div class="dropdown" style="float: right;margin-right:30px;margin-top: 15px;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: none;">
+          <img src="../static/images/单词管理/u348.png" width="20px">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">个人信息</a></li>
+          <li><a href="#">用户反馈</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height: 8%;width: 79%;float: left;margin-left: 1%;">
+    <div class="dropdown" style="margin-top: 10px;margin-left: 15px;float: left;">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: none;">
+        所有分组
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">分组1</a></li>
+        <li><a href="#">分组2</a></li>
+        <li><a href="#">分组3</a></li>
+      </ul>
+    </div>
+    <div class="row" style="float: left;margin-top: 10px;margin-left: 15px;width: 40%">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" style="border-right: none;">
+            <img src="../static/images/单词管理/u441.png">
+          </button>
+        </span>
+        <input type="text" class="form-control" placeholder="请输入内容" style="border-left: none;width: 100%;">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#word_increase" style="float: left;">添加单词</button>
+  </div>
+    </div>
+  <div style="border:1px solid #CCC;float: left;width: 80%;margin-top: 2%;"></div>
+  <div style="float: left;width: 79%;margin-left: 1%;margin-top: 1%;">
+  <table class="table table-hover" >
+    <tr>
+      <td style="width: 10%;">序号</td>
+      <td>英文</td>
+      <td>翻译</td>
+      <td>介绍</td>
+      <td>所属分组</td>
+      <td>添加时间</td>
+      <td>星级</td>
+      <td>操作</td>
+    </tr>
+    <tr>
+      <td style="width: 10%;">1</td>
+      <td>hello</td>
+      <td>你好</td>
+      <td>int. 喂；哈罗 n. 表示问候</td>
+      <td>未知分组</td>
+      <td>2019-01-01</td>
+      <td>
+        <img src="../static/images/单词管理/评价_u372.png">
+      </td>
+      <td>
+        <!-- Large modal -->
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" style=" border: none;border-radius: 50%; background: url(./images/单词管理/u418.png);"></button> -->
+        <img src="../static/images/单词管理/timg.jpg" width="15px;" alt="..." data-toggle="modal" data-target="#word_change">
+        <img src="../static/images/单词管理/u362.png" width="15px;" alt="..." data-toggle="modal" data-target="#word_increase">
+        <img src="../static/images/单词管理/u365.png" width="15px;" alt="..." data-toggle="modal" data-target="#word_delete">
+      </td>
+    </tr>
+  </table>
+  </div>
+</div>
+</div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="word_increase">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增/编辑单词</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">单词&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="请输入单词" style="width: 50%;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词翻译</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入单词翻译" style="width: 50%;">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词翻译</label>
+                    <div class="col-sm-10">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 50%;">
+                          请选择
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="#">选项一</a></li>
+                          <li><a href="#">选项二</a></li>
+                          <li><a href="#">选项三</a></li>
+                          <li><a href="#">选项四</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词星级</label>
+                    <div class="col-sm-10">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u420.png">
+                      <img src="../static/images/单词管理/u420.png">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">例句&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="3" placeholder="请输入内容"></textarea>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- 添加单词模态框 -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="word_increase">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增/编辑单词</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">单词&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="请输入单词" style="width: 50%;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词翻译</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入单词翻译" style="width: 50%;">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词分组</label>
+                    <div class="col-sm-10">
+                      <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 50%;">
+                          请选择
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="#">选项一</a></li>
+                          <li><a href="#">选项二</a></li>
+                          <li><a href="#">选项三</a></li>
+                          <li><a href="#">选项四</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词星级</label>
+                    <div class="col-sm-10">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u420.png">
+                      <img src="../static/images/单词管理/u420.png">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">例句&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="3" placeholder="请输入内容"></textarea>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- 修改按钮模态框 -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="word_change">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增/编辑单词</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">单词&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      lovely
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词翻译</label>
+                    <div class="col-sm-10">
+                      可爱的
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词分组</label>
+                    <div class="col-sm-10">
+                      <div class="dropdown">
+                        形容词
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">单词星级</label>
+                    <div class="col-sm-10">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u418.png">
+                      <img src="../static/images/单词管理/u420.png">
+                      <img src="../static/images/单词管理/u420.png">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">例句&emsp;&emsp;</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" rows="3" placeholder="请输入内容">一个叫流星望的玩家，热衷玩游戏</textarea>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <!-- 删除模态框 -->
+        <div class="modal fade" tabindex="-1" role="dialog" id="word_delete">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">提示</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">
+                    </label>
+                    <div class="col-sm-10">
+                      <img src="../static/images/单词管理/gantanhao.jpg" width="20px;">
+                      此操作将永久删除该分组，是否继续？
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确定</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+</body>
+
+  <script type="text/javascript">
+    function open(html){
+    window.open(html,'_self')
+    }
+  </script>
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+.top{
+	height:45px;
+	width: 100%;
+	background: #f8f9fb;
+	text-align:right;
+}
+.login{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+.bgc{
+	float: left;
+	height: 100%;
+	width: 100%;
+	background-color: #f8f9fb;
+}
+.label_size{
+	width: 25px;
+	height:25px;
+}

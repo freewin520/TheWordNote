@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>反馈管理</title>
+  <!-- <link rel="stylesheet" href="./css/word.css"> -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/word.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="list-group" style="float: left;height: 100%;width: 20%;text-align: center;">
+      <a href="#" class="list-group-item" style="background-color: #f8f9fb;height: 20%;">
+        <img src="../static/images/单词管理/u354.png" width="80px;">
+      </a>
+      <a href="#" class="list-group-item" style="height: 10%;" onclick="location.href='/users_manage'">
+            用户管理
+      </a>
+      <a href="#" class="list-group-item active" style="height: 10%;">反馈管理</a>
+      <ul style="height:0;background-color: #f8f9fb;list-style: none;height: 25%;">
+        <li></li>
+      </ul>
+    </div>
+    <div style="float: right;height: 8%;width: 80%;">
+      <div class="dropdown" style="float: right;margin-right:30px;margin-top: 15px;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: none;">
+          <img src="../static/images/单词管理/u348.png" width="20px">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">个人信息</a></li>
+          <li><a href="#">用户反馈</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height: 8%;width: 79%;float: left;margin-left: 1%;">
+    <div class="row" style="float: left;margin-top: 10px;margin-left: 15px;width: 30%">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" style="border-right: none;">
+            <img src="../static/images/单词管理/u441.png">
+          </button>
+        </span>
+        <input type="text" class="form-control" placeholder="请输入内容" style="border-left: none;width: 200%;">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    </div>
+  </div>
+  <div style="border:1px solid #CCC;float: left;width: 80%;margin-top: 2%;"></div>
+  <div style="float: left;width: 79%;margin-left: 1%;margin-top: 1%;">
+  <table class="table table-hover" style="text-align: center;">
+    <tr>
+      <td style="width: 10%;">编号</td>
+      <td>用户名</td>
+      <td>联系方式</td>
+      <td>审核状态</td>
+      <td>反馈详情</td>
+    </tr>
+    <tr>
+      <td style="width: 10%;">0</td>
+      <td>张某某</td>
+      <td>123456</td>
+      <td>已审核</td>
+      <td>
+        <button type="button" class="button_table" data-toggle="modal" data-target=".feedback">查看</button>
+      </td>
+    </tr>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                ...
+              </div>
+            </div>
+          </div>
+  </table>
+  </div>
+</div>
+</div>
+
+
+    <!-- 用户反馈 -->
+      <div class="modal fade feedback" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">用户反馈</h4>
+            </div>
+          <div class="modal-body" style="margin:10px;">
+            <form class="form-horizontal">
+            <div class="form-group">
+              <label for="exampleInputEmail1">联系邮箱</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="123456@163.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">文本内容</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary">确认审核</button>
+          </div>
+              </div>
+            </div>
+          </div>
+</body>
+
+  <script type="text/javascript">
+    function open(html){
+    window.open(html,'_self')
+    }
+  </script>
+  <script src="https://www.imooc.com/static/lib/jquery/1.9.1/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
